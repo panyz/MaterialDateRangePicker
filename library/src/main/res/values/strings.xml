@@ -70,6 +70,6 @@
 
     <!-- DO NOT TRANSLATE -->
     <string name="mdtp_day_of_week_label_typeface" translatable="false">sans-serif</string>
-    <string name="mdtp_from">FROM</string>
-    <string name="mdtp_to">TO</string>
+    <string name="mdtp_from">开始时间</string>
+    <string name="mdtp_to">结束时间</string>
 </resources>
