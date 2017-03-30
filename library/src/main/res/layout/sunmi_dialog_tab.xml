@@ -14,32 +14,30 @@
      limitations under the License.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/done_background"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="horizontal"
-    android:background="@android:color/transparent"
-    android:gravity="end|right"
-    android:layout_gravity="center_vertical"
-    android:paddingBottom="8dp">
+              android:id="@+id/done_background"
+              android:layout_width="match_parent"
+              android:layout_height="55dp"
+              android:layout_gravity="center_vertical"
+              android:background="@drawable/bg_date_title"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:paddingBottom="10dp"
+              android:paddingTop="10dp"
+    >
 
-    <Button
-        android:id="@+id/cancel"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginEnd="8dp"
-        style="@style/mdtp_ActionButton.Text"
-        android:text="@string/mdtp_cancel" />
-
-    <Button
-        android:id="@+id/ok"
+    <TextView
+        android:id="@+id/tvDateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp"
-        style="@style/mdtp_ActionButton.Text"
-        android:text="@string/mdtp_ok"
-        android:height="24dp"
+        android:text="@string/mdtp_from"
+        android:textSize="18sp"
+        android:textColor="@drawable/color_text_black_selector"
+        />
+
+    <TextView
+        android:id="@+id/tvSelectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/mdtp_date_picker_text_disabled"
         />
 </LinearLayout>

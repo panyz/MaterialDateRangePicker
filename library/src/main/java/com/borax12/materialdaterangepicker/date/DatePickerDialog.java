@@ -18,11 +18,11 @@ package com.borax12.materialdaterangepicker.date;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
@@ -164,6 +164,8 @@ public class DatePickerDialog extends DialogFragment implements
     private int tabTag=1;
     private String startTitle;
     private String endTitle;
+    private TextView mTvStartSelectDate;
+    private TextView mTvEndSelectDate;
 
     /**
      * The callback used to indicate the user is done filling in the date.
@@ -322,13 +324,21 @@ public class DatePickerDialog extends DialogFragment implements
 
         final Activity activity = getActivity();
 
+        View startView = View.inflate(getContext(), R.layout.sunmi_dialog_tab, null);
+        mTvStartSelectDate = (TextView) startView.findViewById(R.id.tvSelectDate);
+        View endtView = View.inflate(getContext(), R.layout.sunmi_dialog_tab, null);
+        mTvEndSelectDate = (TextView) endtView.findViewById(R.id.tvSelectDate);
+        final TextView tvEndDateTitle = (TextView) endtView.findViewById(R.id.tvDateTitle);
+        tvEndDateTitle.setText("结束时间");
+
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
-        startDatePage.setIndicator((startTitle != null && !startTitle.isEmpty()) ? startTitle : activity.getResources().getString(R.string.mdtp_from));
+        startDatePage.setIndicator(startView);
 
         TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
         endDatePage.setContent(R.id.end_date_group);
-        endDatePage.setIndicator((endTitle!=null&&!endTitle.isEmpty())?endTitle:activity.getResources().getString(R.string.mdtp_to));
+        endDatePage.setIndicator(endtView);
+
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
@@ -501,7 +511,6 @@ public class DatePickerDialog extends DialogFragment implements
                 else{
                     calendarDay = new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendarEnd.getTimeInMillis());
                     mDayPickerViewEnd.goTo(calendarDay,true,true,false);
-
                 }
             }
         });
@@ -901,11 +910,15 @@ public class DatePickerDialog extends DialogFragment implements
             mCalendar.set(Calendar.YEAR, year);
             mCalendar.set(Calendar.MONTH, month);
             mCalendar.set(Calendar.DAY_OF_MONTH, day);
+
+            mTvStartSelectDate.setText(year+"-"+month+"-"+day);
         }
        else{
             mCalendarEnd.set(Calendar.YEAR, year);
             mCalendarEnd.set(Calendar.MONTH, month);
             mCalendarEnd.set(Calendar.DAY_OF_MONTH, day);
+
+            mTvEndSelectDate.setText(year+"-"+month+"-"+day);
         }
 
         if(mAutoHighlight) {
