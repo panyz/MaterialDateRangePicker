@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:color="@color/mdtp_date_picker_text_normal" android:state_selected="true"/>
-    <item android:color="@color/mdtp_date_picker_text_disabled"/>
+    <item android:color="@color/blackAssistText"/>
 </selector>

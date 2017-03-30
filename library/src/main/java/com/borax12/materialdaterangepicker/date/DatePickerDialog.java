@@ -477,6 +477,7 @@ public class DatePickerDialog extends DialogFragment implements
             mDayPickerView.setAccentColor(mAccentColor);
             mYearPickerViewEnd.setAccentColor(mAccentColor);
             mDayPickerViewEnd.setAccentColor(mAccentColor);
+
         }
 
         updateDisplay(false);

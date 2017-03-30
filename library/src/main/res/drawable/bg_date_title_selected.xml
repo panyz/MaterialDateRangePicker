@@ -8,7 +8,7 @@
         <shape>
             <stroke
                 android:width="5dp"
-                android:color="@color/mdtp_accent_color"/>
+                android:color="@color/colorAccent"/>
             <solid android:color="@color/mdtp_white"/>
         </shape>
 
