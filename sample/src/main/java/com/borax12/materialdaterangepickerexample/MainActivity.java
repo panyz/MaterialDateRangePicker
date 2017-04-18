@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity implements
                         MainActivity.this,
                         now.get(Calendar.YEAR),
                         now.get(Calendar.MONTH),
-                        now.get(Calendar.DAY_OF_MONTH)
+                        now.get(Calendar.DAY_OF_MONTH),
+                        false
                 );
                 dpd.setAutoHighlight(mAutoHighlight);
                 dpd.show(getSupportFragmentManager(), "Datepickerdialog");
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements
                         MainActivity.this,
                         now.get(Calendar.HOUR_OF_DAY),
                         now.get(Calendar.MINUTE),
-                        false
+                        true
                 );
                 tpd.setOnCancelListener(new DialogInterface.OnCancelListener() {
                     @Override
