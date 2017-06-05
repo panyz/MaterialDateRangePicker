@@ -359,8 +359,8 @@ public class DatePickerDialog extends DialogFragment implements
         mTvEndSelectDate = (TextView) endtView.findViewById(R.id.tvSelectDate);
         final TextView tvEndDateTitle = (TextView) endtView.findViewById(R.id.tvDateTitle);
         tvEndDateTitle.setText("结束时间");
-        mTvStartSelectDate.setText(mYear + "-" + mMonthOfYear + "-" + mDayOfMonth);
-        mTvEndSelectDate.setText(mYearEnd + "-" + mMontOfYearEnd + "-" + mDayOfMonthEnd);
+        mTvStartSelectDate.setText(mYear + "-" + (mMonthOfYear+1) + "-" + mDayOfMonth);
+        mTvEndSelectDate.setText(mYearEnd + "-" + (mMontOfYearEnd+1) + "-" + mDayOfMonthEnd);
 
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
@@ -957,13 +957,13 @@ public class DatePickerDialog extends DialogFragment implements
             mCalendar.set(Calendar.MONTH, month);
             mCalendar.set(Calendar.DAY_OF_MONTH, day);
 
-            mTvStartSelectDate.setText(year + "-" + month + "-" + day);
+            mTvStartSelectDate.setText(year + "-" + (month+1) + "-" + day);
         } else {
             mCalendarEnd.set(Calendar.YEAR, year);
             mCalendarEnd.set(Calendar.MONTH, month);
             mCalendarEnd.set(Calendar.DAY_OF_MONTH, day);
 
-            mTvEndSelectDate.setText(year + "-" + month + "-" + day);
+            mTvEndSelectDate.setText(year + "-" + (month+1) + "-" + day);
         }
 
         if (mAutoHighlight) {
